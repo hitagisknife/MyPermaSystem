@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.perma.dao.MemberDAO">
+
+	<sql id="cols">
+		id,name,score
+	</sql>
+
+	<resultMap type="Member" id="MemberResult">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="score" column="score" />
+	</resultMap>
+
+	<insert id="add" parameterType="Member" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_member values(null,#{name},#{score})
+	</insert>
+
+	<delete id="delete" parameterType="int">
+		delete from t_member where
+		id=#{id}
+	</delete>
+
+	<update id="update" parameterType="Member">
+		update t_member
+		<set>
+			<if test="name!=null">name=#{name},</if>
+			<if test="score!=null">score=#{score},</if>
+		</set>
+		<where>
+			<if test="id!=null">and id=#{id},</if>
+			<if test="name!=null">and name=#{name},</if>
+			<if test="score!=null">and score=#{score},</if>
+		</where>
+	</update>
+
+	<select id="getById" parameterType="int" resultType="Member">
+		select
+		<include refid="cols" />
+		from t_member
+		<where>
+			<if test="id!=null">and id=#{id}</if>
+			<if test="name!=null">and name=#{name}</if>
+			<if test="score!=null">and score=#{score}</if>
+		</where>
+	</select>
+
+	<select id="getAll" resultMap="MemberResult">
+		select * from t_member
+	</select>
+</mapper>
