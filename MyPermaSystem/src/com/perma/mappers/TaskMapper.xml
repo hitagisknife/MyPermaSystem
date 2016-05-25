@@ -30,14 +30,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="name!=null">name=#{name},</if>
 			<if test="score!=null">score=#{score},</if>
 		</set>
-		<where>
-			<if test="id!=null">and id=#{id},</if>
-			<if test="name!=null">and name=#{name},</if>
-			<if test="score!=null">and score=#{score},</if>
-		</where>
+		where id=#{id}
 	</update>
 
-	<select id="getById" parameterType="int" resultType="Task">
+	<select id="getTask" parameterType="int" resultType="Task">
 		select
 		<include refid="cols" />
 		from t_task
@@ -49,6 +45,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="getAll" resultMap="TaskResult">
-		select * from t_task
+		select
+		<include refid="cols" />
+		from t_task
 	</select>
 </mapper>

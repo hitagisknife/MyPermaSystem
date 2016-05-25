@@ -12,7 +12,7 @@ public interface TaskDAO {
 
 	public int update(Task task);
 
-	public Task getById(int id);
+	public Task getTask(int id);
 
 	public List<Task> getAll();
 }

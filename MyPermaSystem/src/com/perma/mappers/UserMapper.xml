@@ -4,9 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.perma.dao.UserDAO">
 
-	<sql id="cols">
-		id,name,password,role
-	</sql>
+	<sql id="cols"> id,name,password,role </sql>
 
 	<resultMap type="User" id="UserResult">
 		<id property="id" column="id" />
@@ -33,28 +31,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="password!=null">password=#{password},</if>
 			<if test="role!=null">role=#{role},</if>
 		</set>
-		<where>
-			<if test="id!=null">and id=#{id},</if>
-			<if test="name!=null">and name=#{name},</if>
-			<if test="password!=null">and password=#{password},</if>
-			<if test="role!=null">and role=#{role},</if>
-		</where>
-		set
-		name=#{name},password=#{password},role=#{role} where id=#{id}
+		where id=#{id}
 	</update>
 
 	<select id="login" parameterType="User" resultType="User">
 		select
 		<include refid="cols" />
-		from t_user
-		<where>
-			<if test="id!=null">and id=#{id}</if>
-			<if test="name!=null">and name=#{name}</if>
-			<if test="role!=null">and role=#{role}</if>
-		</where>
+		from
+		t_user where name=#{name} and password=#{password}
 	</select>
 
 	<select id="getAll" resultMap="UserResult">
-		select * from t_user
+		select
+		<include refid="cols" />
+		from t_user
 	</select>
 </mapper>

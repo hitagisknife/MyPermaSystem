@@ -13,6 +13,7 @@
 	<!-- 自动扫描 -->
 	<context:component-scan base-package="com.perma.dao" />
 	<context:component-scan base-package="com.perma.service" />
+	<!-- <context:component-scan base-package="com.memcached" /> -->
 
 	<!-- 配置数据源 -->
 	<bean id="dataSource"
@@ -66,6 +67,7 @@
 	</tx:advice>
 
 	<!-- 配置事务切面 -->
+	<aop:aspectj-autoproxy />
 	<aop:config>
 		<aop:pointcut id="serviceOperation" expression="execution(* com.perma.service.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation" />

@@ -15,7 +15,7 @@
 			</tr>
 			<tr>
 				<td>userName:</td>
-				<td><input type="text" name="name" value="${usermap.user.name}" /></td>
+				<td><input type="text" name="name" value="${user.name}" /></td>
 			</tr>
 			<tr>
 				<td>password:</td>
@@ -23,12 +23,12 @@
 			</tr>
 			<tr>
 				<td>权限:</td>
-				<td><input type="text" name="role" value="${usermap.user.role}" /></td>
+				<td><input type="text" name="role" value="${user.role}" /></td>
 			</tr>
 			<tr>
-				<td><input type="hidden" name="num" value="${usermap.num }" /><input
-					type="hidden" name="id" value=${usermap.user.id } /> <input
-					type="submit" value="update" /></td>
+				<td><input type="hidden" name="num" value="${num }" />
+				<input type="hidden" name="id" value=${user.id } />
+				<input type="submit" value="update" /></td>
 				<td><font color="red">${errorMsg}</font></td>
 			</tr>
 		</table>

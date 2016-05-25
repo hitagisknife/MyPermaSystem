@@ -15,17 +15,16 @@
 			</tr>
 			<tr>
 				<td>工作名称:</td>
-				<td><input type="text" name="name" value="${taskmap.task.name}" /></td>
+				<td><input type="text" name="name" value="${task.name}" /></td>
 			</tr>
 			<tr>
 				<td>工作分值:</td>
-				<td><input type="text" name="score"
-					value="${taskmap.task.score}" /></td>
+				<td><input type="text" name="score" value="${task.score}" /></td>
 			</tr>
 			<tr>
-				<td><input type="hidden" name="num" value="${taskmap.num }" /><input
-					type="hidden" name="id" value=${taskmap.task.id } /> <input
-					type="submit" value="update" /></td>
+				<td><input type="hidden" name="num" value="${num }" />
+				<input type="hidden" name="id" value=${task.id } />
+				<input type="submit" value="update" /></td>
 				<td><font color="red">${errorMsg}</font></td>
 			</tr>
 		</table>

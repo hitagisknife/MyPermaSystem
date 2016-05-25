@@ -17,7 +17,8 @@ public class UserServiceImpl implements UserService {
 	private UserDAO userDao;
 
 	public User login(User user) {
-		return userDao.login(user);
+		User u = userDao.login(user);
+		return u;
 	}
 
 	public int register(User user, String password2) {
@@ -27,7 +28,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public int update(User user) {
-		return userDao.update(user);
+		int result = userDao.update(user);
+		return result;
 	}
 
 	public int delete(int id) {

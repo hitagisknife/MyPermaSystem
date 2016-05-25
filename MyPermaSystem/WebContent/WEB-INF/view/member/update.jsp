@@ -16,17 +16,16 @@
 			<tr>
 				<td>姓名:</td>
 				<td><input type="text" name="name"
-					value="${membermap.member.name}" /></td>
+					value="${member.name}" /></td>
 			</tr>
 			<tr>
 				<td>班值:</td>
-				<td><input type="text" name="score"
-					value="${membermap.member.score}" /></td>
+				<td><input type="text" name="score" value="${member.score}" /></td>
 			</tr>
 			<tr>
-				<td><input type="hidden" name="num" value="${membermap.num }" /><input
-					type="hidden" name="id" value=${membermap.member.id } /> <input
-					type="submit" value="update" /></td>
+				<td><input type="hidden" name="num" value="${num }" />
+				<input type="hidden" name="id" value=${member.id } /> 
+				<input type="submit" value="update" /></td>
 				<td><font color="red">${errorMsg}</font></td>
 			</tr>
 		</table>
