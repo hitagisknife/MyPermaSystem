@@ -5,13 +5,18 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.perma.model.User;
 
 public class UserServiceImplTest {
 
+	static ApplicationContext ac;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 	}
 
 	@AfterClass
@@ -27,14 +32,11 @@ public class UserServiceImplTest {
 	}
 
 	@Test
-	public void testUpdate() {
+	public void testLogin() {
 		User user = new User();
-		user.setId(1);
-		user.setName("÷‹ œ");
-		user.setPassword("1");
-		user.setRole("ÀÊ±„");
-		int result = new UserServiceImpl().update(user);
-		System.out.println(result);
+		user.setName("∆ÎÔ£");
+		user.setPassword("000");
+		new UserServiceImpl().login(user);
 	}
 
 }

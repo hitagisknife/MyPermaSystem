@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.perma.model.Task;
-import com.perma.sevice.TaskService;
+import com.perma.service.TaskService;
 
 @Controller
 @RequestMapping("task")

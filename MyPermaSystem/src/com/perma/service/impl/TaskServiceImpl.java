@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.perma.dao.TaskDAO;
 import com.perma.model.Task;
-import com.perma.sevice.TaskService;
+import com.perma.service.TaskService;
 
 @Service("taskService")
 public class TaskServiceImpl implements TaskService {

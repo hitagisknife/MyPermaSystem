@@ -1,4 +1,4 @@
-package com.perma.sevice;
+package com.perma.service;
 
 import java.util.List;
 

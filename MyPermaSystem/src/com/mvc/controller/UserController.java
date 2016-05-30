@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.perma.model.User;
-import com.perma.sevice.UserService;
+import com.perma.service.UserService;
 
 @Controller
 @RequestMapping("/user")

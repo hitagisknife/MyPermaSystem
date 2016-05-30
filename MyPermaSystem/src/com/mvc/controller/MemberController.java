@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.perma.model.Member;
-import com.perma.sevice.MemberService;
+import com.perma.service.MemberService;
 
 /*
  * 成员的页面控制器
